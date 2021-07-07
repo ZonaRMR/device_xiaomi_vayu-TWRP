@@ -14,8 +14,16 @@
 # limitations under the License.
 #
 
+#LOCAL_PATH := $(call my-dir)
+
+#ifeq ($(TARGET_DEVICE),vayu)
+#include $(call all-subdir-makefiles,$(LOCAL_PATH))
+#endif
+ifneq ($(filter vayu,$(TARGET_DEVICE)),)
+
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),vayu)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
 endif
+

@@ -25,7 +25,9 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-PRODUCT_SHIPPING_API_LEVEL := 30
+#PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.dm_default_key.options_format.version=2
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vayu,bhima
@@ -81,5 +83,4 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/vendor.qti.hardware.vibrator.impl.so \
     $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libqtivibratoreffect.so
 
-PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/vayu/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so
+PRODUCT_COPY_FILES += $(OUT_DIR)/target/product/vayu/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so

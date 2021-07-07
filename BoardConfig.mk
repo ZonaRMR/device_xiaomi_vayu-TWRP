@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+# For building with minimal manifest
+ALLOW_MISSING_DEPENDENCIES := true
+
+# Workaround for error copying vendor files to recovery ramdisk
+TARGET_COPY_OUT_VENDOR := vendor
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -76,6 +82,9 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
+
+# Ramdisk compression
+LZMA_RAMDISK_TARGETS := recovery
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144

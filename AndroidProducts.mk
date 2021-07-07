@@ -14,7 +14,8 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_vayu.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_vayu.mk
 
-COMMON_LUNCH_CHOICES := twrp_vayu-eng
+COMMON_LUNCH_CHOICES :=  \
+    omni_vayu-userdebug \
+    omni_vayu-eng
